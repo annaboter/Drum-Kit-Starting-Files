@@ -7,6 +7,7 @@ var buttons = document.querySelectorAll(".drum");
 
 buttons.forEach(function(button) {
   button.addEventListener("click", function() {
-    alert("hello");
+    var audio = new Audio('sounds/tom-1.mp3');
+audio.play();
   });
 });
