@@ -1,7 +1,7 @@
 // need to add event listener on click of all the drums
 // document.querySelector("button").addEventListener("click", function() {
 //   alert("Click!");
-// })
+// });
 
 var buttons = document.querySelectorAll(".drum");
 var sounds = [
@@ -15,11 +15,38 @@ var sounds = [
 ];
 
 // refactored code
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function () {
-    sounds[i].play();
-  });
-}
+// for (let i = 0; i < buttons.length; i++) {
+//   buttons[i].addEventListener("click", function () {
+//     sounds[i].play();
+//   });
+// }
+
+// for each of these classes w a s d j k l, add an event listener for keydown
+document.addEventListener("keydown", function (event) {
+  switch (event.key) {
+    case "w":
+      sounds[0].play();
+      break;
+    case "a":
+      sounds[1].play();
+      break;
+    case "s":
+      sounds[2].play();
+      break;
+    case "d":
+      sounds[3].play();
+      break;
+    case "j":
+      sounds[4].play();
+      break;
+    case "k":
+      sounds[5].play();
+      break;
+    case "l":
+      sounds[6].play();
+      break;
+  }
+});
 
 // first code
 // buttons.forEach(function(button) {
