@@ -1,8 +1,3 @@
-// need to add event listener on click of all the drums
-// document.querySelector("button").addEventListener("click", function() {
-//   alert("Click!");
-// });
-
 var buttons = document.querySelectorAll(".drum");
 var sounds = [
   new Audio("sounds/tom-1.mp3"),
@@ -14,16 +9,21 @@ var sounds = [
   new Audio("sounds/kick-bass.mp3")
 ];
 
-// refactored code
-// for (let i = 0; i < buttons.length; i++) {
-//   buttons[i].addEventListener("click", function () {
-//     sounds[i].play();
-//   });
-// }
+// Play sound on button click
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    playSound(this.innerHTML);
+  });
+}
 
-// for each of these classes w a s d j k l, add an event listener for keydown
+// Play sound on keypress
 document.addEventListener("keydown", function (event) {
-  switch (event.key) {
+  playSound(event.key);
+});
+
+// Function where either button click or keypress parameter is passed for sound
+function playSound(key) {
+  switch (key) {
     case "w":
       sounds[0].play();
       break;
@@ -46,34 +46,4 @@ document.addEventListener("keydown", function (event) {
       sounds[6].play();
       break;
   }
-});
-
-// first code
-// buttons.forEach(function(button) {
-//   button.addEventListener("click", function() {
-//     var audio = new Audio('sounds/tom-1.mp3');
-//     audio.play();
-//   });
-// });
-
-// buttons[0].addEventListener("click", function () {
-//   tom1.play();
-// });
-// buttons[1].addEventListener("click", function () {
-//   tom2.play();
-// });
-// buttons[2].addEventListener("click", function () {
-//   tom3.play();
-// });
-// buttons[3].addEventListener("click", function () {
-//   tom4.play();
-// });
-// buttons[4].addEventListener("click", function () {
-//   snare.play();
-// });
-// buttons[5].addEventListener("click", function () {
-//   crash.play();
-// });
-// buttons[6].addEventListener("click", function () {
-//   kick.play();
-// });
+}
