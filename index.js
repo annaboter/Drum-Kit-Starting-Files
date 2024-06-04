@@ -33,24 +33,31 @@ document.addEventListener("keydown", function (event) {
 function playSound(key) {
   switch (key) {
     case "w":
+      sounds[0].currentTime = 0;
       sounds[0].play();
       break;
     case "a":
+      sounds[1].currentTime = 0;
       sounds[1].play();
       break;
     case "s":
+      sounds[2].currentTime = 0;
       sounds[2].play();
       break;
     case "d":
+      sounds[3].currentTime = 0;
       sounds[3].play();
       break;
     case "j":
+      sounds[4].currentTime = 0;
       sounds[4].play();
       break;
     case "k":
+      sounds[5].currentTime = 0;
       sounds[5].play();
       break;
     case "l":
+      sounds[6].currentTime = 0;
       sounds[6].play();
       break;
   }
