@@ -18,7 +18,7 @@ for (let i = 0; i < buttons.length; i++) {
       buttons[i].classList.remove("pressed");
     }, 200);
   });
-}
+};
 
 // Play sound on keypress
 document.addEventListener("keydown", function (event) {
@@ -60,5 +60,14 @@ function playSound(key) {
       sounds[6].currentTime = 0;
       sounds[6].play();
       break;
-  }
-}
+  };
+};
+
+// AI button
+document.querySelector(".ai").addEventListener("click", function (){
+  for (let i = 0; i < 4; i++) {
+    setTimeout(function() {
+      buttons[Math.floor(Math.random() * buttons.length)].click();
+    }, 500 * i);
+  };
+});
