@@ -12,13 +12,21 @@ var sounds = [
 // Play sound on button click
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function() {
+    buttons[i].classList.add("pressed");
     playSound(this.innerHTML);
+    setTimeout(function() {
+      buttons[i].classList.remove("pressed");
+    }, 200);
   });
 }
 
 // Play sound on keypress
 document.addEventListener("keydown", function (event) {
+  document.querySelector("." + event.key).classList.add("pressed");
   playSound(event.key);
+  setTimeout(function () {
+    document.querySelector("." + event.key).classList.remove("pressed");
+  }, 200);
 });
 
 // Function where either button click or keypress parameter is passed for sound
